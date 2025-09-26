@@ -1,22 +1,25 @@
 import { useState } from "react";
 const Home = () => {
-	// let name = "Fernando";
-
-	const [name, setName] = useState("Fernando");
-	const [age, setAge] = useState(25);
-	const randomClick = () => {
-		setName("Borges");
-		setAge(40);
-		console.log("hello");
-	};
-
+	// useState hook of react to create a state variable object
+	const [blogs, setBlogs] = useState([
+		{ title: "My new website", body: "lorem ipsum...", author: "mario", id: 1 },
+		{ title: "Welcome party!", body: "lorem ipsum...", author: "yoshi", id: 2 },
+		{
+			title: "Web dev top tips",
+			body: "lorem ipsum...",
+			author: "mario",
+			id: 3,
+		},
+	]);
 	return (
 		<div className="home">
-			<h2>Home Page</h2>
-			<p>
-				Welcome to the home page {name} and {age} years old
-			</p>
-			<button onClick={randomClick}>Click me</button>
+			<h2>List of Blogs:</h2>
+			{blogs.map((blog) => (
+				<div className="blog-preview" key={blog.id}>
+					<h3>{blog.title}</h3>
+					<p>Written by {blog.author}</p>
+				</div>
+			))}
 		</div>
 	);
 };
