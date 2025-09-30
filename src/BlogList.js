@@ -6,7 +6,7 @@ const BlogList = ({ blogs, title, deleteBlogs }) => {
 				<div className="blog-preview" key={blog.id}>
 					<h3>{blog.title}</h3>
 					<p>Written by {blog.author}</p>
-					<button onClick={() => deleteBlogs(blog.id)}>Delete blog</button>
+					{/* <button onClick={() => deleteBlogs(blog.id)}>Delete blog</button> */}
 				</div>
 			))}
 		</div>

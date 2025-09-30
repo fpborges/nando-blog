@@ -1,20 +1,25 @@
 import NavBar from "./NavBar";
 import Home from "./Home";
+import {
+	BrowserRouter as Router,
+	Route,
+	Routes,
+} from "react-router-dom";
 
 function App() {
-	// const title = "Welcome to the new blog";
-	// const likes = 50;
-	// const person = { name: "Mario", age: 30 };
-	// const link = "http://www.google.com";
-	// const randomNumber = Math.random();
-	//jsx template
 	return (
-		<div className="App">
-			<NavBar />
-			<div className="content">
-				<Home />
+		<Router>
+			<div className="App">
+				<NavBar />
+				<div className="content">
+					<Routes>
+						<Route path="/" element={<Home />} />
+						{/* <Route path="/create" element={<Create />} /> */}
+						{/* <Route path="/blogs/:id" element={<BlogDetails />} /> */}
+					</Routes>
+				</div>
 			</div>
-		</div>
+		</Router>
 	);
 }
 
